@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important Dates - International Conference on Indian Knowledge Systems</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #e74c3c;
+            --gold-color: #f39c12;
+            --success-color: #27ae60;
+            --info-color: #3498db;
+            --warning-color: #f1c40f;
+            --light-bg: #ecf0f1;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-color: #bdc3c7;
+            --primary-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --accent-gradient: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --font-primary: "Inter", sans-serif;
+            --font-heading: "Playfair Display", serif;
+            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.25rem; }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .brand-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            color: var(--white);
+        }
+
+        .brand-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+            color: var(--white);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        /* Dates Section */
+        .dates-section {
+            padding: 5rem 0;
+        }
+
+        .dates-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dates-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--border-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-date {
+            width: 200px;
+            text-align: center;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-date .date {
+            display: block;
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .timeline-date .status {
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .timeline-item.completed .status {
+            background: var(--success-color);
+            color: var(--white);
+        }
+
+        .timeline-item.upcoming .status {
+            background: var(--info-color);
+            color: var(--white);
+        }
+
+        .timeline-item.highlight .status {
+            background: var(--accent-color);
+            color: var(--white);
+        }
+
+        .timeline-item.future .status {
+            background: var(--warning-color);
+            color: var(--text-dark);
+        }
+
+        .timeline-content {
+            flex: 1;
+            margin: 0 2rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            position: relative;
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .timeline-content i {
+            color: var(--accent-color);
+        }
+
+        .conference-schedule {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .day-schedule {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .day-schedule h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .day-schedule p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .additional-info {
+            margin: 4rem 0;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card i {
+            color: var(--accent-color);
+        }
+
+        .schedule-overview {
+            margin-top: 4rem;
+        }
+
+        .schedule-overview h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .schedule-day {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+        }
+
+        .schedule-day h3 {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 1.5rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .schedule-items {
+            padding: 1.5rem;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .time {
+            font-weight: 600;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+        }
+
+        .event {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .footer-logo h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            width: 16px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design - Tablet */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .timeline {
+                max-width: 700px;
+            }
+
+            .timeline-content {
+                margin: 0 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .info-cards {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .schedule-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+
+            .conference-schedule {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Responsive Design - Mobile */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--primary-gradient);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                box-shadow: var(--shadow-medium);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+                border-radius: 8px;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .page-header {
+                padding: 6rem 0 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .dates-section {
+                padding: 3rem 0;
+            }
+
+            .dates-intro {
+                margin-bottom: 3rem;
+            }
+
+            .dates-intro p {
+                font-size: 1rem;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                align-items: flex-start;
+                padding-left: 60px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .timeline-date {
+                width: auto;
+                margin-bottom: 1rem;
+                min-width: 150px;
+            }
+
+            .timeline-content {
+                margin: 0;
+                width: 100%;
+                padding: 1.5rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+                padding: 0.75rem 0;
+            }
+
+            .time {
+                font-size: 0.8rem;
+            }
+
+            .event {
+                font-size: 0.9rem;
+            }
+
+            .additional-info {
+                margin: 3rem 0;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .schedule-overview {
+                margin-top: 3rem;
+            }
+
+            .schedule-overview h2 {
+                font-size: 1.75rem;
+                margin-bottom: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Responsive Design - Small Mobile */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header {
+                padding: 5rem 0 2.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 0.9rem;
+            }
+
+            .brand-text h1 {
+                font-size: 1.2rem;
+            }
+
+            .brand-text p {
+                font-size: 0.8rem;
+            }
+
+            .logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .nav-brand {
+                gap: 10px;
+            }
+
+            .dates-section {
+                padding: 2rem 0;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                padding-left: 50px;
+                margin-bottom: 2rem;
+            }
+
+            .timeline-date {
+                min-width: 120px;
+                padding: 0.75rem;
+            }
+
+            .timeline-date .date {
+                font-size: 0.9rem;
+            }
+
+            .timeline-date .status {
+                font-size: 0.8rem;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .timeline-content {
+                padding: 1rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .timeline-content p {
+                font-size: 0.9rem;
+            }
+
+            .day-schedule {
+                padding: 0.75rem;
+            }
+
+            .day-schedule h4 {
+                font-size: 0.9rem;
+            }
+
+            .day-schedule p {
+                font-size: 0.8rem;
+            }
+
+            .info-card {
+                padding: 1rem;
+            }
+
+            .info-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .info-card p {
+                font-size: 0.9rem;
+            }
+
+            .schedule-day h3 {
+                padding: 1rem;
+                font-size: 1.2rem;
+            }
+
+            .schedule-items {
+                padding: 1rem;
+            }
+
+            .schedule-item {
+                padding: 0.5rem 0;
+            }
+
+            .time {
+                font-size: 0.75rem;
+            }
+
+            .event {
+                font-size: 0.85rem;
+            }
+
+            .schedule-overview h2 {
+                font-size: 1.5rem;
+            }
+
+            .additional-info {
+                margin: 2rem 0;
+            }
+
+            .schedule-overview {
+                margin-top: 2rem;
+            }
+
+            .footer {
+                padding: 3rem 0 1.5rem;
+            }
+
+            .footer-content {
+                gap: 1.5rem;
+            }
+
+            .footer-logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .footer-logo h3 {
+                font-size: 1.2rem;
+            }
+
+            .footer-logo p {
+                font-size: 0.8rem;
+            }
+
+            .social-links a {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        /* Extra Small Devices */
+        @media (max-width: 360px) {
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .timeline-date {
+                min-width: 100px;
+                padding: 0.5rem;
+            }
+
+            .timeline-content {
+                padding: 0.75rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1rem;
+            }
+
+            .info-card {
+                padding: 0.75rem;
+            }
+
+            .schedule-day h3 {
+                font-size: 1.1rem;
+                padding: 0.75rem;
+            }
+
+            .schedule-items {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="img/qulogo.png" alt="Quantum University Logo" class="logo">
+                <div class="brand-text">
+                    <h1>Quantum University</h1>
+                    <p>Center for Indian Knowledge Systems</p>
+                </div>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="tracks.html" class="nav-link">Tracks</a>
+                <a href="committee.html" class="nav-link">Committee</a>
+                <a href="dates.html" class="nav-link active">Dates</a>
+                <a href="guidelines.html" class="nav-link">Guidelines</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Important Dates</h1>
+            <p>Key Milestones and Conference Schedule</p>
+        </div>
+    </section>
+
+    <!-- Dates Section -->
+    <section class="dates-section">
+        <div class="container">
+            <div class="dates-intro">
+                <p>Stay updated with all the important dates and deadlines for the International Conference on Indian Knowledge Systems. Mark your calendars and ensure you don't miss any crucial milestones.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item upcoming">
+                    <div class="timeline-date">
+                        <span class="date">October 5, 2025</span>
+                        <span class="status">Upcoming</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-bullhorn"></i>Last date of Submission of Abstract</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item upcoming">
+                    <div class="timeline-date">
+                        <span class="date">October 20, 2025</span>
+                        <span class="status">Upcoming</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-file-upload"></i>Last Date for Submission of Full Paper</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item upcoming">
+                    <div class="timeline-date">
+                        <span class="date">October 25, 2025</span>
+                        <span class="status">Upcoming</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-check-circle"></i>Confirmation of Acceptance of Full Paper</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item upcoming">
+                    <div class="timeline-date">
+                        <span class="date">October 25, 2025</span>
+                        <span class="status">Upcoming</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-file-alt"></i>Request for Accommodation (if any)</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item future">
+                    <div class="timeline-date">
+                        <span class="date">October 25, 2025</span>
+                        <span class="status">Future</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-edit"></i> Final Paper Submission</h3>
+                    </div>
+                </div>
+
+                <div class="timeline-item highlight">
+                    <div class="timeline-date">
+                        <span class="date">Oct 31 - 01 Nov, 2025</span>
+                        <span class="status">Conference</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3><i class="fas fa-calendar-check"></i> Conference Days</h3>
+                        <p>Two-day international conference featuring keynote speeches, paper presentations, panel discussions, workshops, and cultural programs.</p>
+                        <div class="conference-schedule">
+                            <div class="day-schedule">
+                                <h4>Day 1 - October 31</h4>
+                                <p>Opening Ceremony, Paper Presentations, Panel Discussions, Workshops</p>
+                            </div>
+                            <div class="day-schedule">
+                                <h4>Day 2 - November 01</h4>
+                                <p>Final Sessions, Awards Ceremony, Closing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="additional-info">
+                <div class="info-cards">
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> Time Zone Information</h3>
+                        <p>All dates and times are in Indian Standard Time (IST, UTC+5:30). International participants should adjust their schedules accordingly.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-envelope"></i> Notification Methods</h3>
+                        <p>All important updates and notifications will be sent via email to registered participants. Please ensure your email address is current.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Important Notes</h3>
+                        <p>Deadlines are firm and extensions will only be granted in exceptional circumstances. Late submissions may not be considered for the conference.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conference Schedule Overview -->
+            <div class="schedule-overview">
+                <h2>Detailed Conference Schedule</h2>
+                <div class="schedule-grid">
+                    <div class="schedule-day">
+                        <h3>Day 1 - October 31, 2025</h3>
+                        <div class="schedule-items">
+                            <div class="schedule-item">
+                                <span class="time">09:00 - 10:00</span>
+                                <span class="event">Registration & Welcome Coffee</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">10:00 - 11:00</span>
+                                <span class="event">Opening Ceremony</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">11:00 - 12:00</span>
+                                <span class="event">Keynote Speech 1</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">12:00 - 13:00</span>
+                                <span class="event">Track Sessions (Parallel)</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">13:00 - 14:00</span>
+                                <span class="event">Lunch Break</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">14:00 - 15:30</span>
+                                <span class="event">Paper Presentations</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">15:30 - 16:00</span>
+                                <span class="event">Tea Break</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">16:00 - 17:30</span>
+                                <span class="event">Panel Discussion</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">18:00 - 20:00</span>
+                                <span class="event">Welcome Reception</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="schedule-day">
+                        <h3>Day 2 - November 01, 2025</h3>
+                        <div class="schedule-items">
+                            <div class="schedule-item">
+                                <span class="time">09:00 - 10:00</span>
+                                <span class="event">Keynote Speech 2</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">10:00 - 11:30</span>
+                                <span class="event">Track Sessions (Parallel)</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">11:30 - 12:00</span>
+                                <span class="event">Coffee Break</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">12:00 - 13:00</span>
+                                <span class="event">Workshop Sessions</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">13:00 - 14:00</span>
+                                <span class="event">Lunch Break</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">14:00 - 15:30</span>
+                                <span class="event">Paper Presentations</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">15:30 - 16:00</span>
+                                <span class="event">Tea Break</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">16:00 - 17:00</span>
+                                <span class="event">Poster Session</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span class="time">19:00 - 21:00</span>
+                                <span class="event">Cultural Evening</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/qulogo.png" alt="Quantum University Logo">
+                        <div>
+                            <h3>Quantum University</h3>
+                            <p>Center for Indian Knowledge Systems</p>
+                        </div>
+                    </div>
+                    <p>Leading the way in integrating traditional knowledge with modern education and research methodologies.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Conference</a></li>
+                        <li><a href="tracks.html">Conference Tracks</a></li>
+                        <li><a href="committee.html">Organizing Committee</a></li>
+                        <li><a href="dates.html">Important Dates</a></li>
+                        <li><a href="guidelines.html">Guidelines</a></li>
+                        <li><a href="contact.html">Contact Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Conference Tracks</h4>
+                    <ul>
+                        <li><a href="tracks.html#track1">Scientific Heritage</a></li>
+                        <li><a href="tracks.html#track2">Ayurveda & Yoga</a></li>
+                        <li><a href="tracks.html#track3">Architecture & Design</a></li>
+                        <li><a href="tracks.html#track4">Law & Leadership</a></li>
+                        <li><a href="tracks.html#track5">Language & Literature</a></li>
+                        <li><a href="tracks.html#track6">Sustainable Living</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Quantum University, Mandawar, Roorkee, Uttarakhand - 247667</p>
+                        <p><i class="fas fa-phone"></i> +91-1332-263122</p>
+                        <p><i class="fas fa-envelope"></i> conference@quantumeducation.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quantum University. All rights reserved. | International Conference on Indian Knowledge Systems</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Mobile Menu Toggle
+            const mobileToggle = document.getElementById("mobileToggle");
+            const navMenu = document.getElementById("navMenu");
+
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener("click", () => {
+                    navMenu.classList.toggle("active");
+                    mobileToggle.classList.toggle("active");
+                });
+
+                // Close mobile menu when clicking on a link
+                const navLinks = document.querySelectorAll(".nav-link");
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener("click", (e) => {
+                    if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                    }
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href");
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const headerHeight = document.querySelector(".header").offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth",
+                        });
+                    }
+                });
+            });
+
+            // Animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, observerOptions);
+
+            // Apply animation to elements
+            const animateElements = document.querySelectorAll(".timeline-item, .info-card, .schedule-day");
+            animateElements.forEach((el) => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+                el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+                observer.observe(el);
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector(".header");
+
+            window.addEventListener("scroll", () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    header.style.transform = "translateY(-100%)";
+                } else {
+                    // Scrolling up
+                    header.style.transform = "translateY(0)";
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            // Add loading animation
+            const pageElements = document.querySelectorAll(".timeline-item, .info-card, .schedule-day");
+            pageElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.1}s`;
+                el.classList.add("fade-in");
+            });
+
+            console.log("Dates page loaded successfully!");
+        });
+    </script>
+</body>
+</html>

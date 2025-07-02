@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Tracks - International Conference on Indian Knowledge Systems</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #e74c3c;
+            --gold-color: #f39c12;
+            --success-color: #27ae60;
+            --info-color: #3498db;
+            --warning-color: #f1c40f;
+            --light-bg: #ecf0f1;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-color: #bdc3c7;
+            --primary-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --accent-gradient: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --font-primary: "Inter", sans-serif;
+            --font-heading: "Playfair Display", serif;
+            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.25rem; }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Header Styles */
+        .header {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .brand-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            color: var(--white);
+        }
+
+        .brand-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin: 0;
+            color: var(--white);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 8rem 0 4rem;
+            text-align: center;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        /* Tracks Detailed Section */
+        .tracks-detailed {
+            padding: 5rem 0;
+        }
+
+        .tracks-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tracks-intro h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .tracks-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .tracks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .track-item {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .track-item:hover {
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .track-header {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 2rem;
+        }
+
+        .track-title {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .track-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .track-title h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            flex: 1;
+        }
+
+        .track-code {
+            background: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .track-content {
+            padding: 2rem;
+        }
+
+        .track-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .sub-themes h4 {
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .sub-themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .sub-theme {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .sub-theme i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-theme h5 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .sub-theme p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+        }
+
+        .footer-logo h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            width: 16px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--primary-gradient);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                box-shadow: var(--shadow-medium);
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+                border-radius: 8px;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .track-title {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .sub-themes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .page-header {
+                padding: 6rem 0 3rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .track-content {
+                padding: 1.5rem;
+            }
+
+            .brand-text h1 {
+                font-size: 1.2rem;
+            }
+
+            .brand-text p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="img/qulogo.png" alt="Quantum University Logo" class="logo">
+                <div class="brand-text">
+                    <h1>Quantum University</h1>
+                    <p>Center for Indian Knowledge Systems</p>
+                </div>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="tracks.html" class="nav-link active">Tracks</a>
+                <a href="committee.html" class="nav-link">Committee</a>
+                <a href="dates.html" class="nav-link">Dates</a>
+                <a href="guidelines.html" class="nav-link">Guidelines</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Conference Tracks</h1>
+            <p>Explore Diverse Areas of Indian Knowledge Systems</p>
+        </div>
+    </section>
+
+    <!-- Tracks Detailed Section -->
+    <section class="tracks-detailed">
+        <div class="container">
+            <div class="tracks-intro">
+                <h2>Sub - Themes</h2>
+                <p>Original research papers, articles, case studies invited from researchers, scholars and industry professionals that may cover the following themes, but are not limited to these.</p>
+            </div>
+
+            <div class="tracks-list">
+                <!-- Track 1 -->
+                <div class="track-item" id="track1">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h2>पुनराविष्कार - Rediscovering India's Scientific Heritage for the Future</h2>
+                            <div class="track-code">TRACK-01</div>
+                        </div>
+                    </div>
+                    <div class="track-content">
+                        <p>This track explores the ancient science and scientific heritage of India, focusing on their integration with modern scientific practices. We examine evidence-based approaches to traditional sciences, technological innovations from ancient texts, and the role of traditional knowledge in contemporary scientific advancement.</p>
+                        
+                        <div class="sub-themes">
+                            <div class="sub-themes-grid">
+                                <div class="sub-theme">
+                                    <i class="fas fa-microscope"></i>
+                                    <h5>Traditional Indian contributions to mathematics, astronomy, metallurgy, and physical sciences</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-pills"></i>
+                                    <h5>Integration of IKS with STEM education and innovations</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <h5>Vedic insights in modern scientific and technological paradigms</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-user-md"></i>
+                                    <h5>Sanskrit as a scientific and computational language</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="track-item" id="track2">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-om"></i>
+                            </div>
+                            <h2>आयुर्वेदयोगेन ऐक्यम् - Mind-Body-Soul Alignment through Ayurveda, Yoga, and Wellness Practices</h2>
+                            <div class="track-code">TRACK-02</div>
+                        </div>
+                    </div>
+                    <div class="track-content">
+                        <p>This track focuses on the scientific validation of Ayurvedic and yogic practices and their applications in modern wellness and healthcare. We explore the physiological, psychological, and neurological effects of traditional healing systems, along with their therapeutic applications.</p>
+                        
+                        <div class="sub-themes">
+                            <div class="sub-themes-grid">
+                                <div class="sub-theme">
+                                    <i class="fas fa-brain"></i>
+                                    <h5>Ayurvedic foundations of preventive and therapeutic care</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-heart"></i>
+                                    <h5>Panchakarma, Dravyaguna, and Yogic practices for modern health challenges</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-wind"></i>
+                                    <h5>Culinary wisdom and the role of nutrition in traditional Indian healing</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-lotus"></i>
+                                    <h5>Relevance of psychological and spiritual well-being in contemporary healthcare</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="track-item" id="track3">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h2>पारम्परिकवास्तुनवदृष्टि - Reimagining Space through Indic Architectural Wisdom</h2>
+                            <div class="track-code">TRACK-03</div>
+                        </div>
+                    </div>
+                    <div class="track-content">
+                        <p>This track examines traditional Indian architectural practices and their relevance to modern sustainable design. We explore ancient building techniques, sacred geometry, Vastu principles, and climate-responsive architecture based on traditional wisdom.</p>
+                        
+                        <div class="sub-themes">
+                            <div class="sub-themes-grid">
+                                <div class="sub-theme">
+                                    <i class="fas fa-tractor"></i>
+                                    <h5>Sacred geometry and vastu in traditional Indian architecture</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-bug"></i>
+                                    <h5>Ancient city planning, temple architecture, and their sociocultural context</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-water"></i>
+                                    <h5>Environmentally sensitive housing and sustainable planning</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-leaf"></i>
+                                    <h5>Relevance of traditional construction practices in modern urbanization</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 4 -->
+                <div class="track-item" id="track4">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h2>धर्मनयनेतत्त्वम् - Ancient Indian Thought in Law, Public Policy and Business Leadership</h2>
+                            <div class="track-code">TRACK-04</div>
+                        </div>
+                    </div>
+                    <div class="track-content">
+                        <p>This track explores ancient Indian philosophical and legal systems and their relevance to contemporary governance and leadership. We examine concepts of dharma, justice, ethics, and their applications in modern policy-making, business leadership, and legal frameworks.</p>
+                        
+                        <div class="sub-themes">
+                            <div class="sub-themes-grid">
+                                <div class="sub-theme">
+                                    <i class="fas fa-eye"></i>
+                                    <h5>Chanakya Niti, Arthashastra and Indian models of statecraft and diplomacy</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <h5>Vedic insights in leadership, decision-making and Corporate Social Responsibility</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-infinity"></i>
+                                    <h5>Indian economic thought and sustainability in global policy</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-users"></i>
+                                    <h5>Concept of Nyaya, Mitakshara, Manusmriti and other legal texts</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-gavel"></i>
+                                    <h5>Comparative analysis of ancient Indian and modern legal system</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 5 -->
+                <div class="track-item" id="track5">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h2>शब्दसंस्कृतेः संरक्षणम् - Preserving India's Linguistic and Literary Heritage</h2>
+                            <div class="track-code">TRACK-05</div>
+                        </div>
+                    </div>
+                    <div class="track-content">
+                        <p>This track celebrates the rich linguistic and literary heritage of India. We explore the preservation and revitalization of ancient languages, the role of literature in knowledge transmission, and the cognitive aspects of multilingualism in Indian traditions.</p>
+                        
+                        <div class="sub-themes">
+                            <div class="sub-themes-grid">
+                                <div class="sub-theme">
+                                    <i class="fas fa-square-root-alt"></i>
+                                    <h5>Sanskrit, Prakrit, Pali and regional languages as carriers of IKS</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-moon"></i>
+                                    <h5>Language and cognition in Indian philosophy</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-chart-line"></i>
+                                    <h5>Revitalizing endangered languages for cultural sustainability</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-compass"></i>
+                                    <h5>Role of literature and oral traditions in transmitting knowledge</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 6 -->
+                <div class="track-item" id="track6">
+                    <div class="track-header">
+                        <div class="track-title">
+                            <div class="track-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h2>पारम्पर्यवेद्यं जीवनविन्यासम् - Nature in Harmony: Traditional Knowledge for Sustainable Living</h2>
+                            <div class="track-code">TRACK-06</div>
+                        </div>
+                    </div>
+                    <div class="track-content">
+                        <p>This track examines traditional Indian ecological knowledge and sustainable living practices. We explore ancient environmental wisdom, traditional agriculture, water conservation systems, and community-based natural resource management.</p>
+                        
+                        <div class="sub-themes">
+                            <div class="sub-themes-grid">
+                                <div class="sub-theme">
+                                    <i class="fas fa-music"></i>
+                                    <h5>Jal Shakti: Traditional water conservation systems</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-hammer"></i>
+                                    <h5>Indigenous agricultural practices and food security</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-book"></i>
+                                    <h5>Festivals, ecology and the agrarian calendar</h5>
+                                </div>
+                                <div class="sub-theme">
+                                    <i class="fas fa-building"></i>
+                                    <h5>Role of women and community in environmental stewardship</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/qulogo.png" alt="Quantum University Logo">
+                        <div>
+                            <h3>Quantum University</h3>
+                            <p>Center for Indian Knowledge Systems</p>
+                        </div>
+                    </div>
+                    <p>Leading the way in integrating traditional knowledge with modern education and research methodologies.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Conference</a></li>
+                        <li><a href="tracks.html">Conference Tracks</a></li>
+                        <li><a href="committee.html">Organizing Committee</a></li>
+                        <li><a href="dates.html">Important Dates</a></li>
+                        <li><a href="guidelines.html">Guidelines</a></li>
+                        <li><a href="contact.html">Contact Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Conference Tracks</h4>
+                    <ul>
+                        <li><a href="#track1">Scientific Heritage</a></li>
+                        <li><a href="#track2">Ayurveda & Yoga</a></li>
+                        <li><a href="#track3">Architecture & Design</a></li>
+                        <li><a href="#track4">Law & Leadership</a></li>
+                        <li><a href="#track5">Language & Literature</a></li>
+                        <li><a href="#track6">Sustainable Living</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Quantum University, Mandawar, Roorkee, Uttarakhand - 247667</p>
+                        <p><i class="fas fa-phone"></i> +91-1332-263122</p>
+                        <p><i class="fas fa-envelope"></i> conference@quantumeducation.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quantum University. All rights reserved. | International Conference on Indian Knowledge Systems</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Mobile Menu Toggle
+            const mobileToggle = document.getElementById("mobileToggle");
+            const navMenu = document.getElementById("navMenu");
+
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener("click", () => {
+                    navMenu.classList.toggle("active");
+                    mobileToggle.classList.toggle("active");
+                });
+
+                // Close mobile menu when clicking on a link
+                const navLinks = document.querySelectorAll(".nav-link");
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener("click", (e) => {
+                    if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                    }
+                });
+            }
+
+            // Smooth scrolling for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach((link) => {
+                link.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute("href");
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const headerHeight = document.querySelector(".header").offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth",
+                        });
+                    }
+                });
+            });
+
+            // Animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, observerOptions);
+
+            // Apply animation to elements
+            const animateElements = document.querySelectorAll(".track-item");
+            animateElements.forEach((el) => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+                el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+                observer.observe(el);
+            });
+
+            // Header scroll effect
+            let lastScrollTop = 0;
+            const header = document.querySelector(".header");
+
+            window.addEventListener("scroll", () => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    header.style.transform = "translateY(-100%)";
+                } else {
+                    // Scrolling up
+                    header.style.transform = "translateY(0)";
+                }
+
+                lastScrollTop = scrollTop;
+            });
+
+            // Add loading animation
+            const pageElements = document.querySelectorAll(".track-item");
+            pageElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.2}s`;
+                el.classList.add("fade-in");
+            });
+
+            console.log("Tracks page loaded successfully!");
+        });
+    </script>
+</body>
+</html>
