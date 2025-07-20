@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - International Conference on Indian Knowledge Systems</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #e74c3c;
+            --nav-color: #f9543ecc;
+            --coral-color: #ff6b6b;
+            --gold-color: #f39c12;
+            --success-color: #27ae60;
+            --info-color: #3498db;
+            --warning-color: #f1c40f;
+            --light-bg: #ecf0f1;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-color: #bdc3c7;
+            --primary-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --accent-gradient: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            --coral-gradient: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            --font-primary: "Inter", sans-serif;
+            --font-heading: "Playfair Display", serif;
+            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.25rem; }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Utility Bar Section */
+        .utility-bar {
+            background-color: #812972;
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1002;
+        }
+
+        .utility-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .utility-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .date-time {
+            font-weight: 500;
+        }
+
+        .utility-center {
+            flex: 1;
+            text-align: center;
+        }
+
+        .skip-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skip-link:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .utility-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Top Section - Conference Title */
+        .top-section {
+            background: var(--white);
+            padding: 1.5rem 0;
+            position: static;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-height: 120px;
+            z-index: 999;
+        }
+
+        .top-section .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            padding: 10px 20px;
+            max-width: 1400px;
+        }
+
+        .top-logo {
+            width: 180px;
+            height: 100px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .conference-title {
+            flex: 1;
+            text-align: center;
+            margin: 0 30px;
+            padding: 10px 0;
+        }
+
+        .conference-title h1 {
+            font-family: var(--font-heading);
+            font-size: 2.0rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0 0 8px 0;
+            line-height: 1.2;
+        }
+
+        .conference-title h2 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .top-spacer {
+            width: 180px;
+            flex-shrink: 0;
+        }
+
+        /* Header with coral color */
+        .header {
+            background: var(--coral-gradient);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            height: 70px;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background-color: var(--white);
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            z-index: 1001;
+            position: absolute;
+            right: 20px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 4rem 0 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            color: var(--white);
+        }
+
+        /* About Detailed Section */
+        .about-detailed {
+            padding: 5rem 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .content-section h3 {
+            color: var(--primary-color);
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .objectives-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .objective-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .objective-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .objective-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .theme-card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .theme-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theme-card i {
+            color: var(--accent-color);
+        }
+
+        .outcomes-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .outcomes-list li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .outcomes-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .about-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-box li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-box li:last-child {
+            border-bottom: none;
+        }
+
+        .info-box i {
+            color: var(--accent-color);
+            width: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            font-family: var(--font-heading);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            width: 120px;
+            height: 70px;
+            border-radius: 8px;
+        }
+
+        .footer-logo h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            width: 16px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .top-section .container {
+                max-width: 1200px;
+            }
+
+            .conference-title {
+                margin: 0 20px;
+            }
+
+            .conference-title h1 {
+                font-size: 1.8rem;
+            }
+
+            .conference-title h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Enhanced Mobile Responsive Design */
+        @media (max-width: 768px) {
+            /* Utility Bar Mobile Layout */
+            .utility-bar {
+                padding: 8px 0;
+                font-size: 0.75rem;
+            }
+
+            .utility-bar .container {
+                flex-direction: column;
+                gap: 6px;
+                padding: 0 15px;
+                text-align: center;
+            }
+
+            .utility-left,
+            .utility-center,
+            .utility-right {
+                flex: none;
+                width: 100%;
+            }
+
+            .date-time {
+                font-size: 0.75rem;
+                text-align: center;
+            }
+
+            /* Top Section Mobile */
+            .top-section {
+                min-height: 110px;
+                padding: 1rem 0;
+            }
+
+            .top-section .container {
+                padding: 8px 15px;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+
+            .top-logo {
+                width: 70px;
+                height: 55px;
+                flex-shrink: 0;
+            }
+
+            .top-spacer {
+                width: 70px;
+                flex-shrink: 0;
+            }
+
+            .conference-title {
+                margin: 0 12px;
+                flex: 1;
+                min-width: 0;
+                padding: 5px 0;
+            }
+
+            .conference-title h1 {
+                font-size: 1.1rem !important;
+                line-height: 1.2;
+                margin-bottom: 6px;
+                word-wrap: break-word;
+                hyphens: auto;
+                text-align: center;
+            }
+
+            .conference-title h2 {
+                font-size: 0.95rem !important;
+                margin: 0;
+                text-align: center;
+                line-height: 1.1;
+            }
+
+            /* Header Mobile */
+            .header {
+                height: 55px;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                background: var(--coral-gradient);
+            }
+
+            .header .container {
+                padding: 0 15px;
+            }
+
+            /* Mobile Menu Toggle */
+            .mobile-menu-toggle {
+                display: flex;
+                z-index: 1002;
+                position: absolute;
+                right: 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 8px;
+                border-radius: 4px;
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .mobile-menu-toggle span {
+                width: 22px;
+                height: 2.5px;
+                background-color: var(--white);
+                transition: 0.3s ease;
+                border-radius: 2px;
+            }
+
+            /* Mobile Menu - Full screen overlay */
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--coral-gradient);
+                flex-direction: column;
+                padding: 80px 1.5rem 2rem 1.5rem;
+                gap: 1rem;
+                transform: translateX(-100%);
+                opacity: 0;
+                visibility: hidden;
+                box-shadow: none;
+                overflow-y: auto;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1001;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            /* Close button */
+            .nav-menu.active::after {
+                content: '✕';
+                position: fixed;
+                top: 20px;
+                right: 15px;
+                width: 44px;
+                height: 44px;
+                background: rgba(255, 255, 255, 0.2);
+                border: 2px solid rgba(255, 255, 255, 0.8);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 20px;
+                font-weight: bold;
+                color: white;
+                cursor: pointer;
+                z-index: 1003;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-menu.active::after:hover {
+                background: rgba(255, 255, 255, 0.3);
+                transform: scale(1.1);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .mobile-menu-toggle.active {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .nav-link {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                font-size: 1.1rem;
+                margin: 0.3rem 0;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                min-height: 48px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-link:hover,
+            .nav-link.active {
+                background-color: rgba(255, 255, 255, 0.25);
+                transform: translateY(0) scale(1.02);
+            }
+
+            /* Page Header Mobile */
+            .page-header {
+                padding: 3rem 0 2.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
+            /* About Section Mobile */
+            .about-detailed {
+                padding: 3rem 0;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            /* Content Sections Mobile */
+            .content-section {
+                margin-bottom: 2.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.2rem;
+                line-height: 1.3;
+                text-align: center;
+            }
+
+            .content-section h3 {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 1rem;
+                text-align: center;
+            }
+
+            .content-section p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 1.2rem;
+                text-align: justify;
+                padding: 0 0.5rem;
+            }
+
+            /* Objectives List Mobile */
+            .objectives-list {
+                gap: 1.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .objective-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                background: var(--light-bg);
+                padding: 1.5rem;
+                border-radius: 12px;
+                box-shadow: var(--shadow-light);
+            }
+
+            .objective-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+                margin: 0 auto;
+            }
+
+            .objective-content h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+                line-height: 1.3;
+            }
+
+            .objective-content p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin: 0;
+                text-align: center;
+                padding: 0;
+            }
+
+            /* Outcomes List Mobile */
+            .outcomes-list {
+                padding: 0 1rem;
+            }
+
+            .outcomes-list li {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                padding: 0.6rem 0;
+                padding-left: 1.8rem;
+                text-align: left;
+            }
+
+            .outcomes-list li::before {
+                font-size: 0.9rem;
+            }
+
+            /* Sidebar Mobile */
+            .about-sidebar {
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .info-box {
+                padding: 1.5rem;
+                margin: 0 0.5rem;
+            }
+
+            .info-box h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+
+            .info-box ul li {
+                font-size: 0.9rem;
+                padding: 0.6rem 0;
+                line-height: 1.4;
+                align-items: flex-start;
+            }
+
+            .info-box i {
+                margin-top: 2px;
+                flex-shrink: 0;
+            }
+
+            /* Stats Grid Mobile */
+            .stats-grid {
+                gap: 0.8rem;
+            }
+
+            .stat-item {
+                padding: 1rem 0.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.6rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+                line-height: 1.2;
+            }
+
+            .themes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 0 0.5rem;
+            }
+
+            .theme-card {
+                padding: 1.5rem;
+            }
+
+            .theme-card h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .nav-menu.active::after {
+                top: 15px;
+                right: 12px;
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 0 12px;
+            }
+
+            .page-header {
+                padding: 2rem 0 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.6rem;
+                margin-bottom: 0.6rem;
+                padding: 0 0.5rem;
+            }
+
+            .page-header p {
+                font-size: 0.95rem;
+                padding: 0 0.8rem;
+            }
+
+            .about-detailed {
+                padding: 2.5rem 0;
+            }
+
+            .content-section h2 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+                padding: 0 0.5rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.2rem;
+                margin: 1.2rem 0 0.8rem;
+                padding: 0 0.5rem;
+            }
+
+            .content-section p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 1rem;
+                padding: 0 0.3rem;
+            }
+
+            .objectives-list {
+                gap: 1.2rem;
+                padding: 0 0.3rem;
+            }
+
+            .objective-item {
+                padding: 1.2rem;
+            }
+
+            .objective-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 0.9rem;
+            }
+
+            .objective-content h4 {
+                font-size: 1rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .objective-content p {
+                font-size: 0.85rem;
+                line-height: 1.4;
+            }
+
+            .outcomes-list {
+                padding: 0 0.8rem;
+            }
+
+            .outcomes-list li {
+                font-size: 0.85rem;
+                line-height: 1.4;
+                padding: 0.5rem 0;
+                padding-left: 1.6rem;
+            }
+
+            .info-box {
+                padding: 1.2rem;
+                margin: 0 0.3rem;
+            }
+
+            .info-box h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .info-box ul li {
+                font-size: 0.85rem;
+                padding: 0.5rem 0;
+                line-height: 1.3;
+            }
+
+            .stats-grid {
+                gap: 0.6rem;
+            }
+
+            .stat-item {
+                padding: 0.8rem 0.4rem;
+            }
+
+            .stat-number {
+                font-size: 1.4rem;
+                margin-bottom: 0.2rem;
+            }
+
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            .utility-bar {
+                padding: 6px 0;
+                font-size: 0.7rem;
+            }
+
+            .utility-bar .container {
+                gap: 4px;
+                padding: 0 12px;
+            }
+
+            .date-time {
+                font-size: 0.7rem;
+            }
+
+            .top-section {
+                min-height: 100px;
+                padding: 0.8rem 0;
+            }
+
+            .top-section .container {
+                padding: 6px 12px;
+            }
+
+            .top-logo {
+                width: 85px;
+                height: 50px;
+            }
+
+            .top-spacer {
+                width: 65px;
+            }
+
+            .conference-title {
+                margin: 0 8px;
+            }
+
+            .conference-title h1 {
+                font-size: 1rem !important;
+                line-height: 1.1;
+                margin-bottom: 4px;
+            }
+
+            .conference-title h2 {
+                font-size: 0.85rem !important;
+                line-height: 1.1;
+            }
+
+            .header {
+                height: 50px;
+            }
+
+            .mobile-menu-toggle {
+                right: 12px;
+                padding: 6px;
+            }
+
+            .mobile-menu-toggle span {
+                width: 20px;
+                height: 2px;
+            }
+
+            .nav-menu {
+                padding: 70px 1rem 1.5rem 1rem;
+            }
+
+            .nav-link {
+                max-width: 260px;
+                padding: 0.9rem 1.2rem;
+                font-size: 1rem;
+                margin: 0.25rem 0;
+            }
+        }
+
+        /* Very Small Screens */
+        @media (max-width: 360px) {
+            .conference-title h1 {
+                font-size: 0.9rem !important;
+            }
+
+            .conference-title h2 {
+                font-size: 0.8rem !important;
+            }
+
+            .top-logo {
+                width: 60px;
+                height: 45px;
+            }
+
+            .top-spacer {
+                width: 60px;
+            }
+
+            .page-header h1 {
+                font-size: 1.4rem;
+                padding: 0 0.3rem;
+            }
+
+            .page-header p {
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.2rem;
+                padding: 0 0.3rem;
+            }
+
+            .content-section p {
+                font-size: 0.85rem;
+                padding: 0 0.2rem;
+            }
+
+            .objective-item {
+                padding: 1rem;
+            }
+
+            .objective-content h4 {
+                font-size: 0.95rem;
+            }
+
+            .objective-content p {
+                font-size: 0.8rem;
+            }
+
+            .info-box {
+                padding: 1rem;
+                margin: 0 0.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Utility Bar Section -->
+    <section class="utility-bar">
+        <div class="container">
+            <div class="utility-left">
+                <div class="date-time" id="dateTime">
+                    Today is Sun, July 20, 2025. Time is 0:56:41
+                </div>
+            </div>
+            <div class="utility-center">
+            </div>
+            <div class="utility-right">
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Section with Logo and Conference Title -->
+    <section class="top-section">
+        <div class="container">
+            <img src="img/qulogo2.png" alt="Quantum University Logo" class="top-logo">
+            <div class="conference-title">
+                <h1>International Conference on Indian Knowledge Systems <br> ICIKS 2025</h1>
+                <h2>31 Oct - 01 Nov' 2025</h2>
+            </div>
+            <div class="top-spacer"></div>
+        </div>
+    </section>
+
+    <!-- Header - Navigation Bar with Coral Color -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="tracks.html" class="nav-link">Tracks</a>
+                <a href="committee.html" class="nav-link">Committee</a>
+                <a href="dates.html" class="nav-link">Dates</a>
+                <a href="guidelines.html" class="nav-link">Guidelines</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About the Conference</h1>
+            <p>Bridging Ancient Wisdom to Global Sustainability</p>
+        </div>
+    </section>
+
+    <!-- About Detailed Section -->
+    <section class="about-detailed">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-main">
+                    <div class="content-section">
+                        <h2>Conference Overview</h2>
+                        <p>The Conference shall be uniquely organised in the traditional Indian manner, celebrating the Nation's rich cultural heritage. Emphasis shall be on creating an immersive atmosphere that honours India's timeless wisdom and cultural ethos.</p>
+                        
+                        <p>Everything from wearing traditional Indian attire, enjoying authentic Indian vegetarian cuisine, to following ancient practices such as lamp lighting, vedic chants, and traditional welcome ceremonies to mark the beginning of each session shall bring a unique experience for every participant.</p>
+                        
+                        <p>Also, avail the opportunity to visit the holy cities of Haridwar and Rishikesh and be a part of the devotional vibrance on the banks of river Ganga.</p>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Conference Objectives</h2>
+                        <div class="objectives-list">
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Revitalize Ancient Wisdom</h4>
+                                    <p>To showcase the depth and relevance of India's ancient knowledge systems—spanning Ayurveda, Yoga, Astronomy, Architecture, and more—for solving contemporary global challenges.</p>
+                                </div>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-globe-americas"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Bridge Tradition and Innovation</h4>
+                                    <p>To foster interdisciplinary research that integrates traditional Indian philosophies with modern science, technology, and policy-making.</p>
+                                </div>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Promote Global Dialogue</h4>
+                                    <p>To provide an international platform for scholars, practitioners, and students to exchange insights and collaborate on the applications of Indian Knowledge Systems.</p>
+                                </div>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Inspire Educational Transformation</h4>
+                                    <p>To encourage the inclusion of IKS in mainstream education, curriculum innovation, and institutional frameworks at national and global levels.</p>
+                                </div>
+                            </div>
+                            <div class="objective-item">
+                                <div class="objective-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="objective-content">
+                                    <h4>Position India as a Knowledge Leader</h4>
+                                    <p>To elevate India's intellectual heritage globally and establish its leadership in shaping a sustainable, inclusive, and ethically grounded future.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Expected Outcomes</h2>
+                        <ul class="outcomes-list">
+                            <li>Comprehensive research papers and publications on various aspects of Indian Knowledge Systems</li>
+                            <li>Collaborative research initiatives between international institutions and scholars</li>
+                            <li>Policy recommendations for integrating traditional knowledge into modern educational curricula</li>
+                            <li>Development of innovative methodologies for validating and applying traditional knowledge</li>
+                            <li>Creation of a global network of researchers and practitioners in Indian Knowledge Systems</li>
+                            <li>Identification of funding opportunities for research projects in traditional knowledge domains</li>
+                            <li>Establishment of best practices for preserving and transmitting traditional knowledge</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-sidebar">
+                    <div class="info-box">
+                        <h3>Who can Participate?</h3>
+                        <ul>
+                            <li>Corporate Executives/Entrepreneurs/Practitioners.</li>
+                            <li>Academicians/Research Scholars/Students.</li>
+                            <li>Participation only through physical presence (No online participation)</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Conference Statistics</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-number">2</div>
+                                <div class="stat-label">Days</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">6</div>
+                                <div class="stat-label">Tracks</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">25</div>
+                                <div class="stat-label">Sessions</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100</div>
+                                <div class="stat-label">Presentations</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h3>Important Information</h3>
+                        <ul>
+                            <li><i class="fas fa-language"></i> Languages: English, Hindi</li>
+                            <li><i class="fas fa-certificate"></i> Certificates Provided</li>
+                            <li><i class="fas fa-book"></i> Proceedings Published</li>
+                            <li><i class="fas fa-wifi"></i> Free WiFi Available</li>
+                            <li><i class="fas fa-utensils"></i> Meals Included</li>
+                            <li><i class="fas fa-camera"></i> Photography Allowed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="img/qulogonew11.png" alt="Quantum University Logo">
+                        <div>
+                        </div>
+                    </div>
+                    <p>Leading the way in integrating traditional knowledge with modern education and research methodologies.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Conference</a></li>
+                        <li><a href="tracks.html">Conference Tracks</a></li>
+                        <li><a href="committee.html">Organizing Committee</a></li>
+                        <li><a href="dates.html">Important Dates</a></li>
+                        <li><a href="guidelines.html">Guidelines</a></li>
+                        <li><a href="contact.html">Contact Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Conference Tracks</h4>
+                    <ul>
+                        <li><a href="tracks.html#track1">Scientific Heritage</a></li>
+                        <li><a href="tracks.html#track2">Ayurveda & Yoga</a></li>
+                        <li><a href="tracks.html#track3">Architecture & Design</a></li>
+                        <li><a href="tracks.html#track4">Law & Leadership</a></li>
+                        <li><a href="tracks.html#track5">Language & Literature</a></li>
+                        <li><a href="tracks.html#track6">Sustainable Living</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Quantum University, Mandawar, Roorkee, Uttarakhand - 247667</p>
+                        <p><i class="fas fa-phone"></i> +91-1332-263122</p>
+                        <p><i class="fas fa-envelope"></i> conference@quantumeducation.in</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Quantum University. All rights reserved. | International Conference on Indian Knowledge Systems</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("DOM loaded, initializing about page...");
+
+            // Real-time Date and Time Update
+            function updateDateTime() {
+                const now = new Date();
+                const options = { 
+                    weekday: 'short', 
+                    year: 'numeric', 
+                    month: 'short', 
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                };
+                const dateTimeString = `Today is ${now.toLocaleDateString('en-US', options).replace(',', ',')} Time is ${now.toLocaleTimeString('en-US', {hour12: false})}`;
+                document.getElementById('dateTime').textContent = dateTimeString;
+            }
+
+            // Update time immediately and then every second
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+
+            // Mobile Menu Toggle
+            const mobileToggle = document.getElementById("mobileToggle");
+            const navMenu = document.getElementById("navMenu");
+
+            if (mobileToggle && navMenu) {
+                mobileToggle.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    navMenu.classList.toggle("active");
+                    mobileToggle.classList.toggle("active");
+                    
+                    // Prevent body scroll when menu is open on mobile
+                    if (window.innerWidth <= 768) {
+                        if (navMenu.classList.contains("active")) {
+                            document.body.style.overflow = 'hidden';
+                        } else {
+                            document.body.style.overflow = '';
+                        }
+                    }
+                });
+
+                // Handle close button click (the ::after pseudo-element)
+                navMenu.addEventListener("click", (e) => {
+                    // Check if click is in the close button area (top-right corner)
+                    const rect = navMenu.getBoundingClientRect();
+                    const closeButtonArea = {
+                        left: rect.right - 80,
+                        right: rect.right - 10,
+                        top: rect.top + 15,
+                        bottom: rect.top + 55
+                    };
+                    
+                    if (e.clientX >= closeButtonArea.left && e.clientX <= closeButtonArea.right &&
+                        e.clientY >= closeButtonArea.top && e.clientY <= closeButtonArea.bottom) {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Close mobile menu when clicking on a link
+                const navLinks = document.querySelectorAll(".nav-link");
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                        document.body.style.overflow = '';
+                    });
+                });
+
+                // Close mobile menu when clicking outside
+                document.addEventListener("click", (e) => {
+                    if (!mobileToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Close menu on escape key
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape" && navMenu.classList.contains("active")) {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768) {
+                        navMenu.classList.remove("active");
+                        mobileToggle.classList.remove("active");
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            // Animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px",
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = "1";
+                        entry.target.style.transform = "translateY(0)";
+                    }
+                });
+            }, observerOptions);
+
+            const animateElements = document.querySelectorAll(".objective-item, .theme-card, .info-box");
+            animateElements.forEach((el) => {
+                el.style.opacity = "0";
+                el.style.transform = "translateY(30px)";
+                el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+                observer.observe(el);
+            });
+
+            console.log("About page loaded successfully!");
+        });
+    </script>
+</body>
+</html>
